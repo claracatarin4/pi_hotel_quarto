@@ -11,4 +11,44 @@ generator client {
 
 datasource db {
   provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model TipoQuarto {
+  id               Int       @id @default(autoincrement()) @map("tipo_quarto_id")
+  descricao        String    @db.VarChar(45) @map("tipo_quarto_descricao")
+  status           Int       @map("tipo_quarto_status")
+  quartos          Quarto[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@map("tipo_quarto")
+}
+
+model Quarto {
+  id               Int       @id @default(autoincrement()) @map("quarto_id")
+  numero           String    @db.VarChar(45) @map("quarto_numero")
+  preco            Float     @db.Double @map("quarto_preco")
+  status           Int       @map("quarto_status")
+  tipoQuartoId     Int       @map("tipo_quarto_id")
+  tipoQuarto       TipoQuarto @relation(fields: [tipoQuartoId], references: [id])
+  fotos            Foto[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@map("quarto")
+}
+
+model Foto {
+  id               Int       @id @default(autoincrement()) @map("foto_id")
+  nome             String    @db.VarChar(45) @map("foto_nome")
+  bin              Bytes     @db.LongBlob @map("foto_bin")
+  extensao         String    @db.VarChar(45) @map("foto_extensao")
+  status           Int       @map("foto_status")
+  quartoId         Int       @map("quarto_id")
+  quarto           Quarto    @relation(fields: [quartoId], references: [id])
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@map("foto")
 }
