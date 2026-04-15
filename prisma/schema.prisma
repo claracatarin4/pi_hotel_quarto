@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -15,40 +9,35 @@ datasource db {
 }
 
 model TipoQuarto {
-  id               Int       @id @default(autoincrement()) @map("tipo_quarto_id")
-  descricao        String    @db.VarChar(45) @map("tipo_quarto_descricao")
-  status           Int       @map("tipo_quarto_status")
-  quartos          Quarto[]
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
+  id        Int      @id @default(autoincrement()) @map("tipo_quarto_id")
+  descricao String   @map("tipo_quarto_descricao") @db.VarChar(45)
+  status    Int?     @map("tipo_quarto_status")
+  quartos   Quarto[]
 
   @@map("tipo_quarto")
 }
 
 model Quarto {
-  id               Int       @id @default(autoincrement()) @map("quarto_id")
-  numero           String    @db.VarChar(45) @map("quarto_numero")
-  preco            Float     @db.Double @map("quarto_preco")
-  status           Int       @map("quarto_status")
-  tipoQuartoId     Int       @map("tipo_quarto_id")
-  tipoQuarto       TipoQuarto @relation(fields: [tipoQuartoId], references: [id])
-  fotos            Foto[]
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
+  id           Int        @id @default(autoincrement()) @map("quarto_id")
+  preco        Float      @map("quarto_preco")
+  numero       String?    @map("quarto_numero") @db.VarChar(45)
+  status       Int        @map("quarto_status")
+  tipoQuartoId Int        @map("tipo_quarto_id")
+  fotos        fotos[]
+  tipoQuarto   TipoQuarto @relation(fields: [tipoQuartoId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_quarto_tipo_quarto1")
 
+  @@index([tipoQuartoId], map: "fk_quarto_tipo_quarto1_idx")
   @@map("quarto")
 }
 
-model Foto {
-  id               Int       @id @default(autoincrement()) @map("foto_id")
-  nome             String    @db.VarChar(45) @map("foto_nome")
-  bin              Bytes     @db.LongBlob @map("foto_bin")
-  extensao         String    @db.VarChar(45) @map("foto_extensao")
-  status           Int       @map("foto_status")
-  quartoId         Int       @map("quarto_id")
-  quarto           Quarto    @relation(fields: [quartoId], references: [id])
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
+model fotos {
+  foto_id       Int     @id
+  foto_bin      Bytes?  @db.Blob
+  foto_nome     String? @db.VarChar(45)
+  foto_extensao String? @db.VarChar(45)
+  foto_status   Int?
+  quarto_id     Int
+  quarto        Quarto  @relation(fields: [quarto_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_fotos_quarto1")
 
-  @@map("foto")
+  @@index([quarto_id], map: "fk_fotos_quarto1_idx")
 }

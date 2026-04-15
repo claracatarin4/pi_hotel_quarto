@@ -24,10 +24,10 @@ export type TipoQuarto = $Result.DefaultSelection<Prisma.$TipoQuartoPayload>
  */
 export type Quarto = $Result.DefaultSelection<Prisma.$QuartoPayload>
 /**
- * Model Foto
+ * Model fotos
  * 
  */
-export type Foto = $Result.DefaultSelection<Prisma.$FotoPayload>
+export type fotos = $Result.DefaultSelection<Prisma.$fotosPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -173,14 +173,14 @@ export class PrismaClient<
   get quarto(): Prisma.QuartoDelegate<ExtArgs>;
 
   /**
-   * `prisma.foto`: Exposes CRUD operations for the **Foto** model.
+   * `prisma.fotos`: Exposes CRUD operations for the **fotos** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Fotos
-    * const fotos = await prisma.foto.findMany()
+    * const fotos = await prisma.fotos.findMany()
     * ```
     */
-  get foto(): Prisma.FotoDelegate<ExtArgs>;
+  get fotos(): Prisma.fotosDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -624,7 +624,7 @@ export namespace Prisma {
   export const ModelName: {
     TipoQuarto: 'TipoQuarto',
     Quarto: 'Quarto',
-    Foto: 'Foto'
+    fotos: 'fotos'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -640,7 +640,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "tipoQuarto" | "quarto" | "foto"
+      modelProps: "tipoQuarto" | "quarto" | "fotos"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -776,69 +776,69 @@ export namespace Prisma {
           }
         }
       }
-      Foto: {
-        payload: Prisma.$FotoPayload<ExtArgs>
-        fields: Prisma.FotoFieldRefs
+      fotos: {
+        payload: Prisma.$fotosPayload<ExtArgs>
+        fields: Prisma.fotosFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.FotoFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload> | null
+            args: Prisma.fotosFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.FotoFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload>
+            args: Prisma.fotosFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload>
           }
           findFirst: {
-            args: Prisma.FotoFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload> | null
+            args: Prisma.fotosFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.FotoFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload>
+            args: Prisma.fotosFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload>
           }
           findMany: {
-            args: Prisma.FotoFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload>[]
+            args: Prisma.fotosFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload>[]
           }
           create: {
-            args: Prisma.FotoCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload>
+            args: Prisma.fotosCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload>
           }
           createMany: {
-            args: Prisma.FotoCreateManyArgs<ExtArgs>
+            args: Prisma.fotosCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.FotoDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload>
+            args: Prisma.fotosDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload>
           }
           update: {
-            args: Prisma.FotoUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload>
+            args: Prisma.fotosUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload>
           }
           deleteMany: {
-            args: Prisma.FotoDeleteManyArgs<ExtArgs>
+            args: Prisma.fotosDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.FotoUpdateManyArgs<ExtArgs>
+            args: Prisma.fotosUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.FotoUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FotoPayload>
+            args: Prisma.fotosUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$fotosPayload>
           }
           aggregate: {
-            args: Prisma.FotoAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateFoto>
+            args: Prisma.FotosAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFotos>
           }
           groupBy: {
-            args: Prisma.FotoGroupByArgs<ExtArgs>
-            result: $Utils.Optional<FotoGroupByOutputType>[]
+            args: Prisma.fotosGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FotosGroupByOutputType>[]
           }
           count: {
-            args: Prisma.FotoCountArgs<ExtArgs>
-            result: $Utils.Optional<FotoCountAggregateOutputType> | number
+            args: Prisma.fotosCountArgs<ExtArgs>
+            result: $Utils.Optional<FotosCountAggregateOutputType> | number
           }
         }
       }
@@ -1056,7 +1056,7 @@ export namespace Prisma {
    * QuartoCountOutputType without action
    */
   export type QuartoCountOutputTypeCountFotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FotoWhereInput
+    where?: fotosWhereInput
   }
 
 
@@ -1090,24 +1090,18 @@ export namespace Prisma {
     id: number | null
     descricao: string | null
     status: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type TipoQuartoMaxAggregateOutputType = {
     id: number | null
     descricao: string | null
     status: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type TipoQuartoCountAggregateOutputType = {
     id: number
     descricao: number
     status: number
-    createdAt: number
-    updatedAt: number
     _all: number
   }
 
@@ -1126,24 +1120,18 @@ export namespace Prisma {
     id?: true
     descricao?: true
     status?: true
-    createdAt?: true
-    updatedAt?: true
   }
 
   export type TipoQuartoMaxAggregateInputType = {
     id?: true
     descricao?: true
     status?: true
-    createdAt?: true
-    updatedAt?: true
   }
 
   export type TipoQuartoCountAggregateInputType = {
     id?: true
     descricao?: true
     status?: true
-    createdAt?: true
-    updatedAt?: true
     _all?: true
   }
 
@@ -1236,9 +1224,7 @@ export namespace Prisma {
   export type TipoQuartoGroupByOutputType = {
     id: number
     descricao: string
-    status: number
-    createdAt: Date
-    updatedAt: Date
+    status: number | null
     _count: TipoQuartoCountAggregateOutputType | null
     _avg: TipoQuartoAvgAggregateOutputType | null
     _sum: TipoQuartoSumAggregateOutputType | null
@@ -1264,8 +1250,6 @@ export namespace Prisma {
     id?: boolean
     descricao?: boolean
     status?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
     quartos?: boolean | TipoQuarto$quartosArgs<ExtArgs>
     _count?: boolean | TipoQuartoCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["tipoQuarto"]>
@@ -1275,8 +1259,6 @@ export namespace Prisma {
     id?: boolean
     descricao?: boolean
     status?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
   }
 
   export type TipoQuartoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1292,9 +1274,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       descricao: string
-      status: number
-      createdAt: Date
-      updatedAt: Date
+      status: number | null
     }, ExtArgs["result"]["tipoQuarto"]>
     composites: {}
   }
@@ -1668,8 +1648,6 @@ export namespace Prisma {
     readonly id: FieldRef<"TipoQuarto", 'Int'>
     readonly descricao: FieldRef<"TipoQuarto", 'String'>
     readonly status: FieldRef<"TipoQuarto", 'Int'>
-    readonly createdAt: FieldRef<"TipoQuarto", 'DateTime'>
-    readonly updatedAt: FieldRef<"TipoQuarto", 'DateTime'>
   }
     
 
@@ -2031,32 +2009,26 @@ export namespace Prisma {
 
   export type QuartoMinAggregateOutputType = {
     id: number | null
-    numero: string | null
     preco: number | null
+    numero: string | null
     status: number | null
     tipoQuartoId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type QuartoMaxAggregateOutputType = {
     id: number | null
-    numero: string | null
     preco: number | null
+    numero: string | null
     status: number | null
     tipoQuartoId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type QuartoCountAggregateOutputType = {
     id: number
-    numero: number
     preco: number
+    numero: number
     status: number
     tipoQuartoId: number
-    createdAt: number
-    updatedAt: number
     _all: number
   }
 
@@ -2077,32 +2049,26 @@ export namespace Prisma {
 
   export type QuartoMinAggregateInputType = {
     id?: true
-    numero?: true
     preco?: true
+    numero?: true
     status?: true
     tipoQuartoId?: true
-    createdAt?: true
-    updatedAt?: true
   }
 
   export type QuartoMaxAggregateInputType = {
     id?: true
-    numero?: true
     preco?: true
+    numero?: true
     status?: true
     tipoQuartoId?: true
-    createdAt?: true
-    updatedAt?: true
   }
 
   export type QuartoCountAggregateInputType = {
     id?: true
-    numero?: true
     preco?: true
+    numero?: true
     status?: true
     tipoQuartoId?: true
-    createdAt?: true
-    updatedAt?: true
     _all?: true
   }
 
@@ -2194,12 +2160,10 @@ export namespace Prisma {
 
   export type QuartoGroupByOutputType = {
     id: number
-    numero: string
     preco: number
+    numero: string | null
     status: number
     tipoQuartoId: number
-    createdAt: Date
-    updatedAt: Date
     _count: QuartoCountAggregateOutputType | null
     _avg: QuartoAvgAggregateOutputType | null
     _sum: QuartoSumAggregateOutputType | null
@@ -2223,48 +2187,42 @@ export namespace Prisma {
 
   export type QuartoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    numero?: boolean
     preco?: boolean
+    numero?: boolean
     status?: boolean
     tipoQuartoId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    tipoQuarto?: boolean | TipoQuartoDefaultArgs<ExtArgs>
     fotos?: boolean | Quarto$fotosArgs<ExtArgs>
+    tipoQuarto?: boolean | TipoQuartoDefaultArgs<ExtArgs>
     _count?: boolean | QuartoCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["quarto"]>
 
 
   export type QuartoSelectScalar = {
     id?: boolean
-    numero?: boolean
     preco?: boolean
+    numero?: boolean
     status?: boolean
     tipoQuartoId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
   }
 
   export type QuartoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    tipoQuarto?: boolean | TipoQuartoDefaultArgs<ExtArgs>
     fotos?: boolean | Quarto$fotosArgs<ExtArgs>
+    tipoQuarto?: boolean | TipoQuartoDefaultArgs<ExtArgs>
     _count?: boolean | QuartoCountOutputTypeDefaultArgs<ExtArgs>
   }
 
   export type $QuartoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Quarto"
     objects: {
+      fotos: Prisma.$fotosPayload<ExtArgs>[]
       tipoQuarto: Prisma.$TipoQuartoPayload<ExtArgs>
-      fotos: Prisma.$FotoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      numero: string
       preco: number
+      numero: string | null
       status: number
       tipoQuartoId: number
-      createdAt: Date
-      updatedAt: Date
     }, ExtArgs["result"]["quarto"]>
     composites: {}
   }
@@ -2605,8 +2563,8 @@ export namespace Prisma {
    */
   export interface Prisma__QuartoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    fotos<T extends Quarto$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Quarto$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "findMany"> | Null>
     tipoQuarto<T extends TipoQuartoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TipoQuartoDefaultArgs<ExtArgs>>): Prisma__TipoQuartoClient<$Result.GetResult<Prisma.$TipoQuartoPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
-    fotos<T extends Quarto$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Quarto$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2637,12 +2595,10 @@ export namespace Prisma {
    */ 
   interface QuartoFieldRefs {
     readonly id: FieldRef<"Quarto", 'Int'>
-    readonly numero: FieldRef<"Quarto", 'String'>
     readonly preco: FieldRef<"Quarto", 'Float'>
+    readonly numero: FieldRef<"Quarto", 'String'>
     readonly status: FieldRef<"Quarto", 'Int'>
     readonly tipoQuartoId: FieldRef<"Quarto", 'Int'>
-    readonly createdAt: FieldRef<"Quarto", 'DateTime'>
-    readonly updatedAt: FieldRef<"Quarto", 'DateTime'>
   }
     
 
@@ -2946,19 +2902,19 @@ export namespace Prisma {
    */
   export type Quarto$fotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
-    where?: FotoWhereInput
-    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
-    cursor?: FotoWhereUniqueInput
+    include?: fotosInclude<ExtArgs> | null
+    where?: fotosWhereInput
+    orderBy?: fotosOrderByWithRelationInput | fotosOrderByWithRelationInput[]
+    cursor?: fotosWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: FotoScalarFieldEnum | FotoScalarFieldEnum[]
+    distinct?: FotosScalarFieldEnum | FotosScalarFieldEnum[]
   }
 
   /**
@@ -2977,405 +2933,385 @@ export namespace Prisma {
 
 
   /**
-   * Model Foto
+   * Model fotos
    */
 
-  export type AggregateFoto = {
-    _count: FotoCountAggregateOutputType | null
-    _avg: FotoAvgAggregateOutputType | null
-    _sum: FotoSumAggregateOutputType | null
-    _min: FotoMinAggregateOutputType | null
-    _max: FotoMaxAggregateOutputType | null
+  export type AggregateFotos = {
+    _count: FotosCountAggregateOutputType | null
+    _avg: FotosAvgAggregateOutputType | null
+    _sum: FotosSumAggregateOutputType | null
+    _min: FotosMinAggregateOutputType | null
+    _max: FotosMaxAggregateOutputType | null
   }
 
-  export type FotoAvgAggregateOutputType = {
-    id: number | null
-    status: number | null
-    quartoId: number | null
+  export type FotosAvgAggregateOutputType = {
+    foto_id: number | null
+    foto_status: number | null
+    quarto_id: number | null
   }
 
-  export type FotoSumAggregateOutputType = {
-    id: number | null
-    status: number | null
-    quartoId: number | null
+  export type FotosSumAggregateOutputType = {
+    foto_id: number | null
+    foto_status: number | null
+    quarto_id: number | null
   }
 
-  export type FotoMinAggregateOutputType = {
-    id: number | null
-    nome: string | null
-    bin: Buffer | null
-    extensao: string | null
-    status: number | null
-    quartoId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
+  export type FotosMinAggregateOutputType = {
+    foto_id: number | null
+    foto_bin: Buffer | null
+    foto_nome: string | null
+    foto_extensao: string | null
+    foto_status: number | null
+    quarto_id: number | null
   }
 
-  export type FotoMaxAggregateOutputType = {
-    id: number | null
-    nome: string | null
-    bin: Buffer | null
-    extensao: string | null
-    status: number | null
-    quartoId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
+  export type FotosMaxAggregateOutputType = {
+    foto_id: number | null
+    foto_bin: Buffer | null
+    foto_nome: string | null
+    foto_extensao: string | null
+    foto_status: number | null
+    quarto_id: number | null
   }
 
-  export type FotoCountAggregateOutputType = {
-    id: number
-    nome: number
-    bin: number
-    extensao: number
-    status: number
-    quartoId: number
-    createdAt: number
-    updatedAt: number
+  export type FotosCountAggregateOutputType = {
+    foto_id: number
+    foto_bin: number
+    foto_nome: number
+    foto_extensao: number
+    foto_status: number
+    quarto_id: number
     _all: number
   }
 
 
-  export type FotoAvgAggregateInputType = {
-    id?: true
-    status?: true
-    quartoId?: true
+  export type FotosAvgAggregateInputType = {
+    foto_id?: true
+    foto_status?: true
+    quarto_id?: true
   }
 
-  export type FotoSumAggregateInputType = {
-    id?: true
-    status?: true
-    quartoId?: true
+  export type FotosSumAggregateInputType = {
+    foto_id?: true
+    foto_status?: true
+    quarto_id?: true
   }
 
-  export type FotoMinAggregateInputType = {
-    id?: true
-    nome?: true
-    bin?: true
-    extensao?: true
-    status?: true
-    quartoId?: true
-    createdAt?: true
-    updatedAt?: true
+  export type FotosMinAggregateInputType = {
+    foto_id?: true
+    foto_bin?: true
+    foto_nome?: true
+    foto_extensao?: true
+    foto_status?: true
+    quarto_id?: true
   }
 
-  export type FotoMaxAggregateInputType = {
-    id?: true
-    nome?: true
-    bin?: true
-    extensao?: true
-    status?: true
-    quartoId?: true
-    createdAt?: true
-    updatedAt?: true
+  export type FotosMaxAggregateInputType = {
+    foto_id?: true
+    foto_bin?: true
+    foto_nome?: true
+    foto_extensao?: true
+    foto_status?: true
+    quarto_id?: true
   }
 
-  export type FotoCountAggregateInputType = {
-    id?: true
-    nome?: true
-    bin?: true
-    extensao?: true
-    status?: true
-    quartoId?: true
-    createdAt?: true
-    updatedAt?: true
+  export type FotosCountAggregateInputType = {
+    foto_id?: true
+    foto_bin?: true
+    foto_nome?: true
+    foto_extensao?: true
+    foto_status?: true
+    quarto_id?: true
     _all?: true
   }
 
-  export type FotoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FotosAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Foto to aggregate.
+     * Filter which fotos to aggregate.
      */
-    where?: FotoWhereInput
+    where?: fotosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fotos to fetch.
+     * Determine the order of fotos to fetch.
      */
-    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
+    orderBy?: fotosOrderByWithRelationInput | fotosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: FotoWhereUniqueInput
+    cursor?: fotosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fotos from the position of the cursor.
+     * Take `±n` fotos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fotos.
+     * Skip the first `n` fotos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Fotos
+     * Count returned fotos
     **/
-    _count?: true | FotoCountAggregateInputType
+    _count?: true | FotosCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: FotoAvgAggregateInputType
+    _avg?: FotosAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: FotoSumAggregateInputType
+    _sum?: FotosSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: FotoMinAggregateInputType
+    _min?: FotosMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: FotoMaxAggregateInputType
+    _max?: FotosMaxAggregateInputType
   }
 
-  export type GetFotoAggregateType<T extends FotoAggregateArgs> = {
-        [P in keyof T & keyof AggregateFoto]: P extends '_count' | 'count'
+  export type GetFotosAggregateType<T extends FotosAggregateArgs> = {
+        [P in keyof T & keyof AggregateFotos]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateFoto[P]>
-      : GetScalarType<T[P], AggregateFoto[P]>
+        : GetScalarType<T[P], AggregateFotos[P]>
+      : GetScalarType<T[P], AggregateFotos[P]>
   }
 
 
 
 
-  export type FotoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FotoWhereInput
-    orderBy?: FotoOrderByWithAggregationInput | FotoOrderByWithAggregationInput[]
-    by: FotoScalarFieldEnum[] | FotoScalarFieldEnum
-    having?: FotoScalarWhereWithAggregatesInput
+  export type fotosGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: fotosWhereInput
+    orderBy?: fotosOrderByWithAggregationInput | fotosOrderByWithAggregationInput[]
+    by: FotosScalarFieldEnum[] | FotosScalarFieldEnum
+    having?: fotosScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: FotoCountAggregateInputType | true
-    _avg?: FotoAvgAggregateInputType
-    _sum?: FotoSumAggregateInputType
-    _min?: FotoMinAggregateInputType
-    _max?: FotoMaxAggregateInputType
+    _count?: FotosCountAggregateInputType | true
+    _avg?: FotosAvgAggregateInputType
+    _sum?: FotosSumAggregateInputType
+    _min?: FotosMinAggregateInputType
+    _max?: FotosMaxAggregateInputType
   }
 
-  export type FotoGroupByOutputType = {
-    id: number
-    nome: string
-    bin: Buffer
-    extensao: string
-    status: number
-    quartoId: number
-    createdAt: Date
-    updatedAt: Date
-    _count: FotoCountAggregateOutputType | null
-    _avg: FotoAvgAggregateOutputType | null
-    _sum: FotoSumAggregateOutputType | null
-    _min: FotoMinAggregateOutputType | null
-    _max: FotoMaxAggregateOutputType | null
+  export type FotosGroupByOutputType = {
+    foto_id: number
+    foto_bin: Buffer | null
+    foto_nome: string | null
+    foto_extensao: string | null
+    foto_status: number | null
+    quarto_id: number
+    _count: FotosCountAggregateOutputType | null
+    _avg: FotosAvgAggregateOutputType | null
+    _sum: FotosSumAggregateOutputType | null
+    _min: FotosMinAggregateOutputType | null
+    _max: FotosMaxAggregateOutputType | null
   }
 
-  type GetFotoGroupByPayload<T extends FotoGroupByArgs> = Prisma.PrismaPromise<
+  type GetFotosGroupByPayload<T extends fotosGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<FotoGroupByOutputType, T['by']> &
+      PickEnumerable<FotosGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof FotoGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof FotosGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], FotoGroupByOutputType[P]>
-            : GetScalarType<T[P], FotoGroupByOutputType[P]>
+              : GetScalarType<T[P], FotosGroupByOutputType[P]>
+            : GetScalarType<T[P], FotosGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type FotoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    nome?: boolean
-    bin?: boolean
-    extensao?: boolean
-    status?: boolean
-    quartoId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
+  export type fotosSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    foto_id?: boolean
+    foto_bin?: boolean
+    foto_nome?: boolean
+    foto_extensao?: boolean
+    foto_status?: boolean
+    quarto_id?: boolean
     quarto?: boolean | QuartoDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["foto"]>
+  }, ExtArgs["result"]["fotos"]>
 
 
-  export type FotoSelectScalar = {
-    id?: boolean
-    nome?: boolean
-    bin?: boolean
-    extensao?: boolean
-    status?: boolean
-    quartoId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
+  export type fotosSelectScalar = {
+    foto_id?: boolean
+    foto_bin?: boolean
+    foto_nome?: boolean
+    foto_extensao?: boolean
+    foto_status?: boolean
+    quarto_id?: boolean
   }
 
-  export type FotoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     quarto?: boolean | QuartoDefaultArgs<ExtArgs>
   }
 
-  export type $FotoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Foto"
+  export type $fotosPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "fotos"
     objects: {
       quarto: Prisma.$QuartoPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
-      id: number
-      nome: string
-      bin: Buffer
-      extensao: string
-      status: number
-      quartoId: number
-      createdAt: Date
-      updatedAt: Date
-    }, ExtArgs["result"]["foto"]>
+      foto_id: number
+      foto_bin: Buffer | null
+      foto_nome: string | null
+      foto_extensao: string | null
+      foto_status: number | null
+      quarto_id: number
+    }, ExtArgs["result"]["fotos"]>
     composites: {}
   }
 
-  type FotoGetPayload<S extends boolean | null | undefined | FotoDefaultArgs> = $Result.GetResult<Prisma.$FotoPayload, S>
+  type fotosGetPayload<S extends boolean | null | undefined | fotosDefaultArgs> = $Result.GetResult<Prisma.$fotosPayload, S>
 
-  type FotoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<FotoFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: FotoCountAggregateInputType | true
+  type fotosCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<fotosFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: FotosCountAggregateInputType | true
     }
 
-  export interface FotoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Foto'], meta: { name: 'Foto' } }
+  export interface fotosDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['fotos'], meta: { name: 'fotos' } }
     /**
-     * Find zero or one Foto that matches the filter.
-     * @param {FotoFindUniqueArgs} args - Arguments to find a Foto
+     * Find zero or one Fotos that matches the filter.
+     * @param {fotosFindUniqueArgs} args - Arguments to find a Fotos
      * @example
-     * // Get one Foto
-     * const foto = await prisma.foto.findUnique({
+     * // Get one Fotos
+     * const fotos = await prisma.fotos.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends FotoFindUniqueArgs>(args: SelectSubset<T, FotoFindUniqueArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+    findUnique<T extends fotosFindUniqueArgs>(args: SelectSubset<T, fotosFindUniqueArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
 
     /**
-     * Find one Foto that matches the filter or throw an error with `error.code='P2025'` 
+     * Find one Fotos that matches the filter or throw an error with `error.code='P2025'` 
      * if no matches were found.
-     * @param {FotoFindUniqueOrThrowArgs} args - Arguments to find a Foto
+     * @param {fotosFindUniqueOrThrowArgs} args - Arguments to find a Fotos
      * @example
-     * // Get one Foto
-     * const foto = await prisma.foto.findUniqueOrThrow({
+     * // Get one Fotos
+     * const fotos = await prisma.fotos.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends FotoFindUniqueOrThrowArgs>(args: SelectSubset<T, FotoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+    findUniqueOrThrow<T extends fotosFindUniqueOrThrowArgs>(args: SelectSubset<T, fotosFindUniqueOrThrowArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
 
     /**
-     * Find the first Foto that matches the filter.
+     * Find the first Fotos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FotoFindFirstArgs} args - Arguments to find a Foto
+     * @param {fotosFindFirstArgs} args - Arguments to find a Fotos
      * @example
-     * // Get one Foto
-     * const foto = await prisma.foto.findFirst({
+     * // Get one Fotos
+     * const fotos = await prisma.fotos.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends FotoFindFirstArgs>(args?: SelectSubset<T, FotoFindFirstArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+    findFirst<T extends fotosFindFirstArgs>(args?: SelectSubset<T, fotosFindFirstArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
 
     /**
-     * Find the first Foto that matches the filter or
+     * Find the first Fotos that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FotoFindFirstOrThrowArgs} args - Arguments to find a Foto
+     * @param {fotosFindFirstOrThrowArgs} args - Arguments to find a Fotos
      * @example
-     * // Get one Foto
-     * const foto = await prisma.foto.findFirstOrThrow({
+     * // Get one Fotos
+     * const fotos = await prisma.fotos.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends FotoFindFirstOrThrowArgs>(args?: SelectSubset<T, FotoFindFirstOrThrowArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+    findFirstOrThrow<T extends fotosFindFirstOrThrowArgs>(args?: SelectSubset<T, fotosFindFirstOrThrowArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
 
     /**
      * Find zero or more Fotos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FotoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {fotosFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Fotos
-     * const fotos = await prisma.foto.findMany()
+     * const fotos = await prisma.fotos.findMany()
      * 
      * // Get first 10 Fotos
-     * const fotos = await prisma.foto.findMany({ take: 10 })
+     * const fotos = await prisma.fotos.findMany({ take: 10 })
      * 
-     * // Only select the `id`
-     * const fotoWithIdOnly = await prisma.foto.findMany({ select: { id: true } })
+     * // Only select the `foto_id`
+     * const fotosWithFoto_idOnly = await prisma.fotos.findMany({ select: { foto_id: true } })
      * 
      */
-    findMany<T extends FotoFindManyArgs>(args?: SelectSubset<T, FotoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany">>
+    findMany<T extends fotosFindManyArgs>(args?: SelectSubset<T, fotosFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "findMany">>
 
     /**
-     * Create a Foto.
-     * @param {FotoCreateArgs} args - Arguments to create a Foto.
+     * Create a Fotos.
+     * @param {fotosCreateArgs} args - Arguments to create a Fotos.
      * @example
-     * // Create one Foto
-     * const Foto = await prisma.foto.create({
+     * // Create one Fotos
+     * const Fotos = await prisma.fotos.create({
      *   data: {
-     *     // ... data to create a Foto
+     *     // ... data to create a Fotos
      *   }
      * })
      * 
      */
-    create<T extends FotoCreateArgs>(args: SelectSubset<T, FotoCreateArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "create">, never, ExtArgs>
+    create<T extends fotosCreateArgs>(args: SelectSubset<T, fotosCreateArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "create">, never, ExtArgs>
 
     /**
      * Create many Fotos.
-     * @param {FotoCreateManyArgs} args - Arguments to create many Fotos.
+     * @param {fotosCreateManyArgs} args - Arguments to create many Fotos.
      * @example
      * // Create many Fotos
-     * const foto = await prisma.foto.createMany({
+     * const fotos = await prisma.fotos.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends FotoCreateManyArgs>(args?: SelectSubset<T, FotoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends fotosCreateManyArgs>(args?: SelectSubset<T, fotosCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Foto.
-     * @param {FotoDeleteArgs} args - Arguments to delete one Foto.
+     * Delete a Fotos.
+     * @param {fotosDeleteArgs} args - Arguments to delete one Fotos.
      * @example
-     * // Delete one Foto
-     * const Foto = await prisma.foto.delete({
+     * // Delete one Fotos
+     * const Fotos = await prisma.fotos.delete({
      *   where: {
-     *     // ... filter to delete one Foto
+     *     // ... filter to delete one Fotos
      *   }
      * })
      * 
      */
-    delete<T extends FotoDeleteArgs>(args: SelectSubset<T, FotoDeleteArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+    delete<T extends fotosDeleteArgs>(args: SelectSubset<T, fotosDeleteArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "delete">, never, ExtArgs>
 
     /**
-     * Update one Foto.
-     * @param {FotoUpdateArgs} args - Arguments to update one Foto.
+     * Update one Fotos.
+     * @param {fotosUpdateArgs} args - Arguments to update one Fotos.
      * @example
-     * // Update one Foto
-     * const foto = await prisma.foto.update({
+     * // Update one Fotos
+     * const fotos = await prisma.fotos.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3385,30 +3321,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends FotoUpdateArgs>(args: SelectSubset<T, FotoUpdateArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "update">, never, ExtArgs>
+    update<T extends fotosUpdateArgs>(args: SelectSubset<T, fotosUpdateArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "update">, never, ExtArgs>
 
     /**
      * Delete zero or more Fotos.
-     * @param {FotoDeleteManyArgs} args - Arguments to filter Fotos to delete.
+     * @param {fotosDeleteManyArgs} args - Arguments to filter Fotos to delete.
      * @example
      * // Delete a few Fotos
-     * const { count } = await prisma.foto.deleteMany({
+     * const { count } = await prisma.fotos.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends FotoDeleteManyArgs>(args?: SelectSubset<T, FotoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends fotosDeleteManyArgs>(args?: SelectSubset<T, fotosDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Fotos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FotoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {fotosUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Fotos
-     * const foto = await prisma.foto.updateMany({
+     * const fotos = await prisma.fotos.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3418,56 +3354,56 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends FotoUpdateManyArgs>(args: SelectSubset<T, FotoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends fotosUpdateManyArgs>(args: SelectSubset<T, fotosUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Foto.
-     * @param {FotoUpsertArgs} args - Arguments to update or create a Foto.
+     * Create or update one Fotos.
+     * @param {fotosUpsertArgs} args - Arguments to update or create a Fotos.
      * @example
-     * // Update or create a Foto
-     * const foto = await prisma.foto.upsert({
+     * // Update or create a Fotos
+     * const fotos = await prisma.fotos.upsert({
      *   create: {
-     *     // ... data to create a Foto
+     *     // ... data to create a Fotos
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Foto we want to update
+     *     // ... the filter for the Fotos we want to update
      *   }
      * })
      */
-    upsert<T extends FotoUpsertArgs>(args: SelectSubset<T, FotoUpsertArgs<ExtArgs>>): Prisma__FotoClient<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+    upsert<T extends fotosUpsertArgs>(args: SelectSubset<T, fotosUpsertArgs<ExtArgs>>): Prisma__fotosClient<$Result.GetResult<Prisma.$fotosPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
 
 
     /**
      * Count the number of Fotos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FotoCountArgs} args - Arguments to filter Fotos to count.
+     * @param {fotosCountArgs} args - Arguments to filter Fotos to count.
      * @example
      * // Count the number of Fotos
-     * const count = await prisma.foto.count({
+     * const count = await prisma.fotos.count({
      *   where: {
      *     // ... the filter for the Fotos we want to count
      *   }
      * })
     **/
-    count<T extends FotoCountArgs>(
-      args?: Subset<T, FotoCountArgs>,
+    count<T extends fotosCountArgs>(
+      args?: Subset<T, fotosCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], FotoCountAggregateOutputType>
+          : GetScalarType<T['select'], FotosCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Foto.
+     * Allows you to perform aggregations operations on a Fotos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FotoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {FotosAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3487,13 +3423,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends FotoAggregateArgs>(args: Subset<T, FotoAggregateArgs>): Prisma.PrismaPromise<GetFotoAggregateType<T>>
+    aggregate<T extends FotosAggregateArgs>(args: Subset<T, FotosAggregateArgs>): Prisma.PrismaPromise<GetFotosAggregateType<T>>
 
     /**
-     * Group by Foto.
+     * Group by Fotos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FotoGroupByArgs} args - Group by arguments.
+     * @param {fotosGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3508,14 +3444,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends FotoGroupByArgs,
+      T extends fotosGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: FotoGroupByArgs['orderBy'] }
-        : { orderBy?: FotoGroupByArgs['orderBy'] },
+        ? { orderBy: fotosGroupByArgs['orderBy'] }
+        : { orderBy?: fotosGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3564,20 +3500,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, FotoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFotoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, fotosGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFotosGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Foto model
+   * Fields of the fotos model
    */
-  readonly fields: FotoFieldRefs;
+  readonly fields: fotosFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Foto.
+   * The delegate class that acts as a "Promise-like" for fotos.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__FotoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__fotosClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     quarto<T extends QuartoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, QuartoDefaultArgs<ExtArgs>>): Prisma__QuartoClient<$Result.GetResult<Prisma.$QuartoPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     /**
@@ -3606,327 +3542,325 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Foto model
+   * Fields of the fotos model
    */ 
-  interface FotoFieldRefs {
-    readonly id: FieldRef<"Foto", 'Int'>
-    readonly nome: FieldRef<"Foto", 'String'>
-    readonly bin: FieldRef<"Foto", 'Bytes'>
-    readonly extensao: FieldRef<"Foto", 'String'>
-    readonly status: FieldRef<"Foto", 'Int'>
-    readonly quartoId: FieldRef<"Foto", 'Int'>
-    readonly createdAt: FieldRef<"Foto", 'DateTime'>
-    readonly updatedAt: FieldRef<"Foto", 'DateTime'>
+  interface fotosFieldRefs {
+    readonly foto_id: FieldRef<"fotos", 'Int'>
+    readonly foto_bin: FieldRef<"fotos", 'Bytes'>
+    readonly foto_nome: FieldRef<"fotos", 'String'>
+    readonly foto_extensao: FieldRef<"fotos", 'String'>
+    readonly foto_status: FieldRef<"fotos", 'Int'>
+    readonly quarto_id: FieldRef<"fotos", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Foto findUnique
+   * fotos findUnique
    */
-  export type FotoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * Filter, which Foto to fetch.
+     * Filter, which fotos to fetch.
      */
-    where: FotoWhereUniqueInput
+    where: fotosWhereUniqueInput
   }
 
   /**
-   * Foto findUniqueOrThrow
+   * fotos findUniqueOrThrow
    */
-  export type FotoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * Filter, which Foto to fetch.
+     * Filter, which fotos to fetch.
      */
-    where: FotoWhereUniqueInput
+    where: fotosWhereUniqueInput
   }
 
   /**
-   * Foto findFirst
+   * fotos findFirst
    */
-  export type FotoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * Filter, which Foto to fetch.
+     * Filter, which fotos to fetch.
      */
-    where?: FotoWhereInput
+    where?: fotosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fotos to fetch.
+     * Determine the order of fotos to fetch.
      */
-    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
+    orderBy?: fotosOrderByWithRelationInput | fotosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Fotos.
+     * Sets the position for searching for fotos.
      */
-    cursor?: FotoWhereUniqueInput
+    cursor?: fotosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fotos from the position of the cursor.
+     * Take `±n` fotos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fotos.
+     * Skip the first `n` fotos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Fotos.
+     * Filter by unique combinations of fotos.
      */
-    distinct?: FotoScalarFieldEnum | FotoScalarFieldEnum[]
+    distinct?: FotosScalarFieldEnum | FotosScalarFieldEnum[]
   }
 
   /**
-   * Foto findFirstOrThrow
+   * fotos findFirstOrThrow
    */
-  export type FotoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * Filter, which Foto to fetch.
+     * Filter, which fotos to fetch.
      */
-    where?: FotoWhereInput
+    where?: fotosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fotos to fetch.
+     * Determine the order of fotos to fetch.
      */
-    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
+    orderBy?: fotosOrderByWithRelationInput | fotosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Fotos.
+     * Sets the position for searching for fotos.
      */
-    cursor?: FotoWhereUniqueInput
+    cursor?: fotosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fotos from the position of the cursor.
+     * Take `±n` fotos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fotos.
+     * Skip the first `n` fotos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Fotos.
+     * Filter by unique combinations of fotos.
      */
-    distinct?: FotoScalarFieldEnum | FotoScalarFieldEnum[]
+    distinct?: FotosScalarFieldEnum | FotosScalarFieldEnum[]
   }
 
   /**
-   * Foto findMany
+   * fotos findMany
    */
-  export type FotoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * Filter, which Fotos to fetch.
+     * Filter, which fotos to fetch.
      */
-    where?: FotoWhereInput
+    where?: fotosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fotos to fetch.
+     * Determine the order of fotos to fetch.
      */
-    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
+    orderBy?: fotosOrderByWithRelationInput | fotosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Fotos.
+     * Sets the position for listing fotos.
      */
-    cursor?: FotoWhereUniqueInput
+    cursor?: fotosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fotos from the position of the cursor.
+     * Take `±n` fotos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fotos.
+     * Skip the first `n` fotos.
      */
     skip?: number
-    distinct?: FotoScalarFieldEnum | FotoScalarFieldEnum[]
+    distinct?: FotosScalarFieldEnum | FotosScalarFieldEnum[]
   }
 
   /**
-   * Foto create
+   * fotos create
    */
-  export type FotoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * The data needed to create a Foto.
+     * The data needed to create a fotos.
      */
-    data: XOR<FotoCreateInput, FotoUncheckedCreateInput>
+    data: XOR<fotosCreateInput, fotosUncheckedCreateInput>
   }
 
   /**
-   * Foto createMany
+   * fotos createMany
    */
-  export type FotoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Fotos.
+     * The data used to create many fotos.
      */
-    data: FotoCreateManyInput | FotoCreateManyInput[]
+    data: fotosCreateManyInput | fotosCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Foto update
+   * fotos update
    */
-  export type FotoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * The data needed to update a Foto.
+     * The data needed to update a fotos.
      */
-    data: XOR<FotoUpdateInput, FotoUncheckedUpdateInput>
+    data: XOR<fotosUpdateInput, fotosUncheckedUpdateInput>
     /**
-     * Choose, which Foto to update.
+     * Choose, which fotos to update.
      */
-    where: FotoWhereUniqueInput
+    where: fotosWhereUniqueInput
   }
 
   /**
-   * Foto updateMany
+   * fotos updateMany
    */
-  export type FotoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Fotos.
+     * The data used to update fotos.
      */
-    data: XOR<FotoUpdateManyMutationInput, FotoUncheckedUpdateManyInput>
+    data: XOR<fotosUpdateManyMutationInput, fotosUncheckedUpdateManyInput>
     /**
-     * Filter which Fotos to update
+     * Filter which fotos to update
      */
-    where?: FotoWhereInput
+    where?: fotosWhereInput
   }
 
   /**
-   * Foto upsert
+   * fotos upsert
    */
-  export type FotoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * The filter to search for the Foto to update in case it exists.
+     * The filter to search for the fotos to update in case it exists.
      */
-    where: FotoWhereUniqueInput
+    where: fotosWhereUniqueInput
     /**
-     * In case the Foto found by the `where` argument doesn't exist, create a new Foto with this data.
+     * In case the fotos found by the `where` argument doesn't exist, create a new fotos with this data.
      */
-    create: XOR<FotoCreateInput, FotoUncheckedCreateInput>
+    create: XOR<fotosCreateInput, fotosUncheckedCreateInput>
     /**
-     * In case the Foto was found with the provided `where` argument, update it with this data.
+     * In case the fotos was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<FotoUpdateInput, FotoUncheckedUpdateInput>
+    update: XOR<fotosUpdateInput, fotosUncheckedUpdateInput>
   }
 
   /**
-   * Foto delete
+   * fotos delete
    */
-  export type FotoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
     /**
-     * Filter which Foto to delete.
+     * Filter which fotos to delete.
      */
-    where: FotoWhereUniqueInput
+    where: fotosWhereUniqueInput
   }
 
   /**
-   * Foto deleteMany
+   * fotos deleteMany
    */
-  export type FotoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Fotos to delete
+     * Filter which fotos to delete
      */
-    where?: FotoWhereInput
+    where?: fotosWhereInput
   }
 
   /**
-   * Foto without action
+   * fotos without action
    */
-  export type FotoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type fotosDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Foto
+     * Select specific fields to fetch from the fotos
      */
-    select?: FotoSelect<ExtArgs> | null
+    select?: fotosSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FotoInclude<ExtArgs> | null
+    include?: fotosInclude<ExtArgs> | null
   }
 
 
@@ -3947,9 +3881,7 @@ export namespace Prisma {
   export const TipoQuartoScalarFieldEnum: {
     id: 'id',
     descricao: 'descricao',
-    status: 'status',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    status: 'status'
   };
 
   export type TipoQuartoScalarFieldEnum = (typeof TipoQuartoScalarFieldEnum)[keyof typeof TipoQuartoScalarFieldEnum]
@@ -3957,29 +3889,25 @@ export namespace Prisma {
 
   export const QuartoScalarFieldEnum: {
     id: 'id',
-    numero: 'numero',
     preco: 'preco',
+    numero: 'numero',
     status: 'status',
-    tipoQuartoId: 'tipoQuartoId',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    tipoQuartoId: 'tipoQuartoId'
   };
 
   export type QuartoScalarFieldEnum = (typeof QuartoScalarFieldEnum)[keyof typeof QuartoScalarFieldEnum]
 
 
-  export const FotoScalarFieldEnum: {
-    id: 'id',
-    nome: 'nome',
-    bin: 'bin',
-    extensao: 'extensao',
-    status: 'status',
-    quartoId: 'quartoId',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+  export const FotosScalarFieldEnum: {
+    foto_id: 'foto_id',
+    foto_bin: 'foto_bin',
+    foto_nome: 'foto_nome',
+    foto_extensao: 'foto_extensao',
+    foto_status: 'foto_status',
+    quarto_id: 'quarto_id'
   };
 
-  export type FotoScalarFieldEnum = (typeof FotoScalarFieldEnum)[keyof typeof FotoScalarFieldEnum]
+  export type FotosScalarFieldEnum = (typeof FotosScalarFieldEnum)[keyof typeof FotosScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3988,6 +3916,14 @@ export namespace Prisma {
   };
 
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -4006,13 +3942,6 @@ export namespace Prisma {
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
-    
-
-
-  /**
-   * Reference to a field of type 'DateTime'
-   */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
     
 
 
@@ -4039,18 +3968,14 @@ export namespace Prisma {
     NOT?: TipoQuartoWhereInput | TipoQuartoWhereInput[]
     id?: IntFilter<"TipoQuarto"> | number
     descricao?: StringFilter<"TipoQuarto"> | string
-    status?: IntFilter<"TipoQuarto"> | number
-    createdAt?: DateTimeFilter<"TipoQuarto"> | Date | string
-    updatedAt?: DateTimeFilter<"TipoQuarto"> | Date | string
+    status?: IntNullableFilter<"TipoQuarto"> | number | null
     quartos?: QuartoListRelationFilter
   }
 
   export type TipoQuartoOrderByWithRelationInput = {
     id?: SortOrder
     descricao?: SortOrder
-    status?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+    status?: SortOrderInput | SortOrder
     quartos?: QuartoOrderByRelationAggregateInput
   }
 
@@ -4060,18 +3985,14 @@ export namespace Prisma {
     OR?: TipoQuartoWhereInput[]
     NOT?: TipoQuartoWhereInput | TipoQuartoWhereInput[]
     descricao?: StringFilter<"TipoQuarto"> | string
-    status?: IntFilter<"TipoQuarto"> | number
-    createdAt?: DateTimeFilter<"TipoQuarto"> | Date | string
-    updatedAt?: DateTimeFilter<"TipoQuarto"> | Date | string
+    status?: IntNullableFilter<"TipoQuarto"> | number | null
     quartos?: QuartoListRelationFilter
   }, "id">
 
   export type TipoQuartoOrderByWithAggregationInput = {
     id?: SortOrder
     descricao?: SortOrder
-    status?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+    status?: SortOrderInput | SortOrder
     _count?: TipoQuartoCountOrderByAggregateInput
     _avg?: TipoQuartoAvgOrderByAggregateInput
     _max?: TipoQuartoMaxOrderByAggregateInput
@@ -4085,9 +4006,7 @@ export namespace Prisma {
     NOT?: TipoQuartoScalarWhereWithAggregatesInput | TipoQuartoScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"TipoQuarto"> | number
     descricao?: StringWithAggregatesFilter<"TipoQuarto"> | string
-    status?: IntWithAggregatesFilter<"TipoQuarto"> | number
-    createdAt?: DateTimeWithAggregatesFilter<"TipoQuarto"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"TipoQuarto"> | Date | string
+    status?: IntNullableWithAggregatesFilter<"TipoQuarto"> | number | null
   }
 
   export type QuartoWhereInput = {
@@ -4095,26 +4014,22 @@ export namespace Prisma {
     OR?: QuartoWhereInput[]
     NOT?: QuartoWhereInput | QuartoWhereInput[]
     id?: IntFilter<"Quarto"> | number
-    numero?: StringFilter<"Quarto"> | string
     preco?: FloatFilter<"Quarto"> | number
+    numero?: StringNullableFilter<"Quarto"> | string | null
     status?: IntFilter<"Quarto"> | number
     tipoQuartoId?: IntFilter<"Quarto"> | number
-    createdAt?: DateTimeFilter<"Quarto"> | Date | string
-    updatedAt?: DateTimeFilter<"Quarto"> | Date | string
+    fotos?: FotosListRelationFilter
     tipoQuarto?: XOR<TipoQuartoRelationFilter, TipoQuartoWhereInput>
-    fotos?: FotoListRelationFilter
   }
 
   export type QuartoOrderByWithRelationInput = {
     id?: SortOrder
-    numero?: SortOrder
     preco?: SortOrder
+    numero?: SortOrderInput | SortOrder
     status?: SortOrder
     tipoQuartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+    fotos?: fotosOrderByRelationAggregateInput
     tipoQuarto?: TipoQuartoOrderByWithRelationInput
-    fotos?: FotoOrderByRelationAggregateInput
   }
 
   export type QuartoWhereUniqueInput = Prisma.AtLeast<{
@@ -4122,24 +4037,20 @@ export namespace Prisma {
     AND?: QuartoWhereInput | QuartoWhereInput[]
     OR?: QuartoWhereInput[]
     NOT?: QuartoWhereInput | QuartoWhereInput[]
-    numero?: StringFilter<"Quarto"> | string
     preco?: FloatFilter<"Quarto"> | number
+    numero?: StringNullableFilter<"Quarto"> | string | null
     status?: IntFilter<"Quarto"> | number
     tipoQuartoId?: IntFilter<"Quarto"> | number
-    createdAt?: DateTimeFilter<"Quarto"> | Date | string
-    updatedAt?: DateTimeFilter<"Quarto"> | Date | string
+    fotos?: FotosListRelationFilter
     tipoQuarto?: XOR<TipoQuartoRelationFilter, TipoQuartoWhereInput>
-    fotos?: FotoListRelationFilter
   }, "id">
 
   export type QuartoOrderByWithAggregationInput = {
     id?: SortOrder
-    numero?: SortOrder
     preco?: SortOrder
+    numero?: SortOrderInput | SortOrder
     status?: SortOrder
     tipoQuartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
     _count?: QuartoCountOrderByAggregateInput
     _avg?: QuartoAvgOrderByAggregateInput
     _max?: QuartoMaxOrderByAggregateInput
@@ -4152,284 +4063,233 @@ export namespace Prisma {
     OR?: QuartoScalarWhereWithAggregatesInput[]
     NOT?: QuartoScalarWhereWithAggregatesInput | QuartoScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Quarto"> | number
-    numero?: StringWithAggregatesFilter<"Quarto"> | string
     preco?: FloatWithAggregatesFilter<"Quarto"> | number
+    numero?: StringNullableWithAggregatesFilter<"Quarto"> | string | null
     status?: IntWithAggregatesFilter<"Quarto"> | number
     tipoQuartoId?: IntWithAggregatesFilter<"Quarto"> | number
-    createdAt?: DateTimeWithAggregatesFilter<"Quarto"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Quarto"> | Date | string
   }
 
-  export type FotoWhereInput = {
-    AND?: FotoWhereInput | FotoWhereInput[]
-    OR?: FotoWhereInput[]
-    NOT?: FotoWhereInput | FotoWhereInput[]
-    id?: IntFilter<"Foto"> | number
-    nome?: StringFilter<"Foto"> | string
-    bin?: BytesFilter<"Foto"> | Buffer
-    extensao?: StringFilter<"Foto"> | string
-    status?: IntFilter<"Foto"> | number
-    quartoId?: IntFilter<"Foto"> | number
-    createdAt?: DateTimeFilter<"Foto"> | Date | string
-    updatedAt?: DateTimeFilter<"Foto"> | Date | string
+  export type fotosWhereInput = {
+    AND?: fotosWhereInput | fotosWhereInput[]
+    OR?: fotosWhereInput[]
+    NOT?: fotosWhereInput | fotosWhereInput[]
+    foto_id?: IntFilter<"fotos"> | number
+    foto_bin?: BytesNullableFilter<"fotos"> | Buffer | null
+    foto_nome?: StringNullableFilter<"fotos"> | string | null
+    foto_extensao?: StringNullableFilter<"fotos"> | string | null
+    foto_status?: IntNullableFilter<"fotos"> | number | null
+    quarto_id?: IntFilter<"fotos"> | number
     quarto?: XOR<QuartoRelationFilter, QuartoWhereInput>
   }
 
-  export type FotoOrderByWithRelationInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    bin?: SortOrder
-    extensao?: SortOrder
-    status?: SortOrder
-    quartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+  export type fotosOrderByWithRelationInput = {
+    foto_id?: SortOrder
+    foto_bin?: SortOrderInput | SortOrder
+    foto_nome?: SortOrderInput | SortOrder
+    foto_extensao?: SortOrderInput | SortOrder
+    foto_status?: SortOrderInput | SortOrder
+    quarto_id?: SortOrder
     quarto?: QuartoOrderByWithRelationInput
   }
 
-  export type FotoWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: FotoWhereInput | FotoWhereInput[]
-    OR?: FotoWhereInput[]
-    NOT?: FotoWhereInput | FotoWhereInput[]
-    nome?: StringFilter<"Foto"> | string
-    bin?: BytesFilter<"Foto"> | Buffer
-    extensao?: StringFilter<"Foto"> | string
-    status?: IntFilter<"Foto"> | number
-    quartoId?: IntFilter<"Foto"> | number
-    createdAt?: DateTimeFilter<"Foto"> | Date | string
-    updatedAt?: DateTimeFilter<"Foto"> | Date | string
+  export type fotosWhereUniqueInput = Prisma.AtLeast<{
+    foto_id?: number
+    AND?: fotosWhereInput | fotosWhereInput[]
+    OR?: fotosWhereInput[]
+    NOT?: fotosWhereInput | fotosWhereInput[]
+    foto_bin?: BytesNullableFilter<"fotos"> | Buffer | null
+    foto_nome?: StringNullableFilter<"fotos"> | string | null
+    foto_extensao?: StringNullableFilter<"fotos"> | string | null
+    foto_status?: IntNullableFilter<"fotos"> | number | null
+    quarto_id?: IntFilter<"fotos"> | number
     quarto?: XOR<QuartoRelationFilter, QuartoWhereInput>
-  }, "id">
+  }, "foto_id">
 
-  export type FotoOrderByWithAggregationInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    bin?: SortOrder
-    extensao?: SortOrder
-    status?: SortOrder
-    quartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    _count?: FotoCountOrderByAggregateInput
-    _avg?: FotoAvgOrderByAggregateInput
-    _max?: FotoMaxOrderByAggregateInput
-    _min?: FotoMinOrderByAggregateInput
-    _sum?: FotoSumOrderByAggregateInput
+  export type fotosOrderByWithAggregationInput = {
+    foto_id?: SortOrder
+    foto_bin?: SortOrderInput | SortOrder
+    foto_nome?: SortOrderInput | SortOrder
+    foto_extensao?: SortOrderInput | SortOrder
+    foto_status?: SortOrderInput | SortOrder
+    quarto_id?: SortOrder
+    _count?: fotosCountOrderByAggregateInput
+    _avg?: fotosAvgOrderByAggregateInput
+    _max?: fotosMaxOrderByAggregateInput
+    _min?: fotosMinOrderByAggregateInput
+    _sum?: fotosSumOrderByAggregateInput
   }
 
-  export type FotoScalarWhereWithAggregatesInput = {
-    AND?: FotoScalarWhereWithAggregatesInput | FotoScalarWhereWithAggregatesInput[]
-    OR?: FotoScalarWhereWithAggregatesInput[]
-    NOT?: FotoScalarWhereWithAggregatesInput | FotoScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Foto"> | number
-    nome?: StringWithAggregatesFilter<"Foto"> | string
-    bin?: BytesWithAggregatesFilter<"Foto"> | Buffer
-    extensao?: StringWithAggregatesFilter<"Foto"> | string
-    status?: IntWithAggregatesFilter<"Foto"> | number
-    quartoId?: IntWithAggregatesFilter<"Foto"> | number
-    createdAt?: DateTimeWithAggregatesFilter<"Foto"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Foto"> | Date | string
+  export type fotosScalarWhereWithAggregatesInput = {
+    AND?: fotosScalarWhereWithAggregatesInput | fotosScalarWhereWithAggregatesInput[]
+    OR?: fotosScalarWhereWithAggregatesInput[]
+    NOT?: fotosScalarWhereWithAggregatesInput | fotosScalarWhereWithAggregatesInput[]
+    foto_id?: IntWithAggregatesFilter<"fotos"> | number
+    foto_bin?: BytesNullableWithAggregatesFilter<"fotos"> | Buffer | null
+    foto_nome?: StringNullableWithAggregatesFilter<"fotos"> | string | null
+    foto_extensao?: StringNullableWithAggregatesFilter<"fotos"> | string | null
+    foto_status?: IntNullableWithAggregatesFilter<"fotos"> | number | null
+    quarto_id?: IntWithAggregatesFilter<"fotos"> | number
   }
 
   export type TipoQuartoCreateInput = {
     descricao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    status?: number | null
     quartos?: QuartoCreateNestedManyWithoutTipoQuartoInput
   }
 
   export type TipoQuartoUncheckedCreateInput = {
     id?: number
     descricao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    status?: number | null
     quartos?: QuartoUncheckedCreateNestedManyWithoutTipoQuartoInput
   }
 
   export type TipoQuartoUpdateInput = {
     descricao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableIntFieldUpdateOperationsInput | number | null
     quartos?: QuartoUpdateManyWithoutTipoQuartoNestedInput
   }
 
   export type TipoQuartoUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     descricao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableIntFieldUpdateOperationsInput | number | null
     quartos?: QuartoUncheckedUpdateManyWithoutTipoQuartoNestedInput
   }
 
   export type TipoQuartoCreateManyInput = {
     id?: number
     descricao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    status?: number | null
   }
 
   export type TipoQuartoUpdateManyMutationInput = {
     descricao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type TipoQuartoUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     descricao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type QuartoCreateInput = {
-    numero: string
     preco: number
+    numero?: string | null
     status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    fotos?: fotosCreateNestedManyWithoutQuartoInput
     tipoQuarto: TipoQuartoCreateNestedOneWithoutQuartosInput
-    fotos?: FotoCreateNestedManyWithoutQuartoInput
   }
 
   export type QuartoUncheckedCreateInput = {
     id?: number
-    numero: string
     preco: number
+    numero?: string | null
     status: number
     tipoQuartoId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    fotos?: FotoUncheckedCreateNestedManyWithoutQuartoInput
+    fotos?: fotosUncheckedCreateNestedManyWithoutQuartoInput
   }
 
   export type QuartoUpdateInput = {
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fotos?: fotosUpdateManyWithoutQuartoNestedInput
     tipoQuarto?: TipoQuartoUpdateOneRequiredWithoutQuartosNestedInput
-    fotos?: FotoUpdateManyWithoutQuartoNestedInput
   }
 
   export type QuartoUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
     tipoQuartoId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    fotos?: FotoUncheckedUpdateManyWithoutQuartoNestedInput
+    fotos?: fotosUncheckedUpdateManyWithoutQuartoNestedInput
   }
 
   export type QuartoCreateManyInput = {
     id?: number
-    numero: string
     preco: number
+    numero?: string | null
     status: number
     tipoQuartoId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type QuartoUpdateManyMutationInput = {
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QuartoUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
     tipoQuartoId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type FotoCreateInput = {
-    nome: string
-    bin: Buffer
-    extensao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+  export type fotosCreateInput = {
+    foto_id: number
+    foto_bin?: Buffer | null
+    foto_nome?: string | null
+    foto_extensao?: string | null
+    foto_status?: number | null
     quarto: QuartoCreateNestedOneWithoutFotosInput
   }
 
-  export type FotoUncheckedCreateInput = {
-    id?: number
-    nome: string
-    bin: Buffer
-    extensao: string
-    status: number
-    quartoId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+  export type fotosUncheckedCreateInput = {
+    foto_id: number
+    foto_bin?: Buffer | null
+    foto_nome?: string | null
+    foto_extensao?: string | null
+    foto_status?: number | null
+    quarto_id: number
   }
 
-  export type FotoUpdateInput = {
-    nome?: StringFieldUpdateOperationsInput | string
-    bin?: BytesFieldUpdateOperationsInput | Buffer
-    extensao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type fotosUpdateInput = {
+    foto_id?: IntFieldUpdateOperationsInput | number
+    foto_bin?: NullableBytesFieldUpdateOperationsInput | Buffer | null
+    foto_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_extensao?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_status?: NullableIntFieldUpdateOperationsInput | number | null
     quarto?: QuartoUpdateOneRequiredWithoutFotosNestedInput
   }
 
-  export type FotoUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    bin?: BytesFieldUpdateOperationsInput | Buffer
-    extensao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    quartoId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type fotosUncheckedUpdateInput = {
+    foto_id?: IntFieldUpdateOperationsInput | number
+    foto_bin?: NullableBytesFieldUpdateOperationsInput | Buffer | null
+    foto_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_extensao?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_status?: NullableIntFieldUpdateOperationsInput | number | null
+    quarto_id?: IntFieldUpdateOperationsInput | number
   }
 
-  export type FotoCreateManyInput = {
-    id?: number
-    nome: string
-    bin: Buffer
-    extensao: string
-    status: number
-    quartoId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+  export type fotosCreateManyInput = {
+    foto_id: number
+    foto_bin?: Buffer | null
+    foto_nome?: string | null
+    foto_extensao?: string | null
+    foto_status?: number | null
+    quarto_id: number
   }
 
-  export type FotoUpdateManyMutationInput = {
-    nome?: StringFieldUpdateOperationsInput | string
-    bin?: BytesFieldUpdateOperationsInput | Buffer
-    extensao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type fotosUpdateManyMutationInput = {
+    foto_id?: IntFieldUpdateOperationsInput | number
+    foto_bin?: NullableBytesFieldUpdateOperationsInput | Buffer | null
+    foto_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_extensao?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type FotoUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    bin?: BytesFieldUpdateOperationsInput | Buffer
-    extensao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    quartoId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type fotosUncheckedUpdateManyInput = {
+    foto_id?: IntFieldUpdateOperationsInput | number
+    foto_bin?: NullableBytesFieldUpdateOperationsInput | Buffer | null
+    foto_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_extensao?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_status?: NullableIntFieldUpdateOperationsInput | number | null
+    quarto_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -4457,21 +4317,26 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type QuartoListRelationFilter = {
     every?: QuartoWhereInput
     some?: QuartoWhereInput
     none?: QuartoWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
   }
 
   export type QuartoOrderByRelationAggregateInput = {
@@ -4482,8 +4347,6 @@ export namespace Prisma {
     id?: SortOrder
     descricao?: SortOrder
     status?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type TipoQuartoAvgOrderByAggregateInput = {
@@ -4495,16 +4358,12 @@ export namespace Prisma {
     id?: SortOrder
     descricao?: SortOrder
     status?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type TipoQuartoMinOrderByAggregateInput = {
     id?: SortOrder
     descricao?: SortOrder
     status?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type TipoQuartoSumOrderByAggregateInput = {
@@ -4545,18 +4404,20 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type FloatFilter<$PrismaModel = never> = {
@@ -4570,29 +4431,41 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type FotosListRelationFilter = {
+    every?: fotosWhereInput
+    some?: fotosWhereInput
+    none?: fotosWhereInput
+  }
+
   export type TipoQuartoRelationFilter = {
     is?: TipoQuartoWhereInput
     isNot?: TipoQuartoWhereInput
   }
 
-  export type FotoListRelationFilter = {
-    every?: FotoWhereInput
-    some?: FotoWhereInput
-    none?: FotoWhereInput
-  }
-
-  export type FotoOrderByRelationAggregateInput = {
+  export type fotosOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type QuartoCountOrderByAggregateInput = {
     id?: SortOrder
-    numero?: SortOrder
     preco?: SortOrder
+    numero?: SortOrder
     status?: SortOrder
     tipoQuartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type QuartoAvgOrderByAggregateInput = {
@@ -4604,22 +4477,18 @@ export namespace Prisma {
 
   export type QuartoMaxOrderByAggregateInput = {
     id?: SortOrder
-    numero?: SortOrder
     preco?: SortOrder
+    numero?: SortOrder
     status?: SortOrder
     tipoQuartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type QuartoMinOrderByAggregateInput = {
     id?: SortOrder
-    numero?: SortOrder
     preco?: SortOrder
+    numero?: SortOrder
     status?: SortOrder
     tipoQuartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type QuartoSumOrderByAggregateInput = {
@@ -4645,11 +4514,28 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type BytesFilter<$PrismaModel = never> = {
-    equals?: Buffer | BytesFieldRefInput<$PrismaModel>
-    in?: Buffer[]
-    notIn?: Buffer[]
-    not?: NestedBytesFilter<$PrismaModel> | Buffer
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type BytesNullableFilter<$PrismaModel = never> = {
+    equals?: Buffer | BytesFieldRefInput<$PrismaModel> | null
+    in?: Buffer[] | null
+    notIn?: Buffer[] | null
+    not?: NestedBytesNullableFilter<$PrismaModel> | Buffer | null
   }
 
   export type QuartoRelationFilter = {
@@ -4657,59 +4543,53 @@ export namespace Prisma {
     isNot?: QuartoWhereInput
   }
 
-  export type FotoCountOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    bin?: SortOrder
-    extensao?: SortOrder
-    status?: SortOrder
-    quartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+  export type fotosCountOrderByAggregateInput = {
+    foto_id?: SortOrder
+    foto_bin?: SortOrder
+    foto_nome?: SortOrder
+    foto_extensao?: SortOrder
+    foto_status?: SortOrder
+    quarto_id?: SortOrder
   }
 
-  export type FotoAvgOrderByAggregateInput = {
-    id?: SortOrder
-    status?: SortOrder
-    quartoId?: SortOrder
+  export type fotosAvgOrderByAggregateInput = {
+    foto_id?: SortOrder
+    foto_status?: SortOrder
+    quarto_id?: SortOrder
   }
 
-  export type FotoMaxOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    bin?: SortOrder
-    extensao?: SortOrder
-    status?: SortOrder
-    quartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+  export type fotosMaxOrderByAggregateInput = {
+    foto_id?: SortOrder
+    foto_bin?: SortOrder
+    foto_nome?: SortOrder
+    foto_extensao?: SortOrder
+    foto_status?: SortOrder
+    quarto_id?: SortOrder
   }
 
-  export type FotoMinOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    bin?: SortOrder
-    extensao?: SortOrder
-    status?: SortOrder
-    quartoId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+  export type fotosMinOrderByAggregateInput = {
+    foto_id?: SortOrder
+    foto_bin?: SortOrder
+    foto_nome?: SortOrder
+    foto_extensao?: SortOrder
+    foto_status?: SortOrder
+    quarto_id?: SortOrder
   }
 
-  export type FotoSumOrderByAggregateInput = {
-    id?: SortOrder
-    status?: SortOrder
-    quartoId?: SortOrder
+  export type fotosSumOrderByAggregateInput = {
+    foto_id?: SortOrder
+    foto_status?: SortOrder
+    quarto_id?: SortOrder
   }
 
-  export type BytesWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Buffer | BytesFieldRefInput<$PrismaModel>
-    in?: Buffer[]
-    notIn?: Buffer[]
-    not?: NestedBytesWithAggregatesFilter<$PrismaModel> | Buffer
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBytesFilter<$PrismaModel>
-    _max?: NestedBytesFilter<$PrismaModel>
+  export type BytesNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Buffer | BytesFieldRefInput<$PrismaModel> | null
+    in?: Buffer[] | null
+    notIn?: Buffer[] | null
+    not?: NestedBytesNullableWithAggregatesFilter<$PrismaModel> | Buffer | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBytesNullableFilter<$PrismaModel>
+    _max?: NestedBytesNullableFilter<$PrismaModel>
   }
 
   export type QuartoCreateNestedManyWithoutTipoQuartoInput = {
@@ -4730,16 +4610,12 @@ export namespace Prisma {
     set?: string
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
   }
 
   export type QuartoUpdateManyWithoutTipoQuartoNestedInput = {
@@ -4756,6 +4632,14 @@ export namespace Prisma {
     deleteMany?: QuartoScalarWhereInput | QuartoScalarWhereInput[]
   }
 
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type QuartoUncheckedUpdateManyWithoutTipoQuartoNestedInput = {
     create?: XOR<QuartoCreateWithoutTipoQuartoInput, QuartoUncheckedCreateWithoutTipoQuartoInput> | QuartoCreateWithoutTipoQuartoInput[] | QuartoUncheckedCreateWithoutTipoQuartoInput[]
     connectOrCreate?: QuartoCreateOrConnectWithoutTipoQuartoInput | QuartoCreateOrConnectWithoutTipoQuartoInput[]
@@ -4770,24 +4654,24 @@ export namespace Prisma {
     deleteMany?: QuartoScalarWhereInput | QuartoScalarWhereInput[]
   }
 
+  export type fotosCreateNestedManyWithoutQuartoInput = {
+    create?: XOR<fotosCreateWithoutQuartoInput, fotosUncheckedCreateWithoutQuartoInput> | fotosCreateWithoutQuartoInput[] | fotosUncheckedCreateWithoutQuartoInput[]
+    connectOrCreate?: fotosCreateOrConnectWithoutQuartoInput | fotosCreateOrConnectWithoutQuartoInput[]
+    createMany?: fotosCreateManyQuartoInputEnvelope
+    connect?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+  }
+
   export type TipoQuartoCreateNestedOneWithoutQuartosInput = {
     create?: XOR<TipoQuartoCreateWithoutQuartosInput, TipoQuartoUncheckedCreateWithoutQuartosInput>
     connectOrCreate?: TipoQuartoCreateOrConnectWithoutQuartosInput
     connect?: TipoQuartoWhereUniqueInput
   }
 
-  export type FotoCreateNestedManyWithoutQuartoInput = {
-    create?: XOR<FotoCreateWithoutQuartoInput, FotoUncheckedCreateWithoutQuartoInput> | FotoCreateWithoutQuartoInput[] | FotoUncheckedCreateWithoutQuartoInput[]
-    connectOrCreate?: FotoCreateOrConnectWithoutQuartoInput | FotoCreateOrConnectWithoutQuartoInput[]
-    createMany?: FotoCreateManyQuartoInputEnvelope
-    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-  }
-
-  export type FotoUncheckedCreateNestedManyWithoutQuartoInput = {
-    create?: XOR<FotoCreateWithoutQuartoInput, FotoUncheckedCreateWithoutQuartoInput> | FotoCreateWithoutQuartoInput[] | FotoUncheckedCreateWithoutQuartoInput[]
-    connectOrCreate?: FotoCreateOrConnectWithoutQuartoInput | FotoCreateOrConnectWithoutQuartoInput[]
-    createMany?: FotoCreateManyQuartoInputEnvelope
-    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+  export type fotosUncheckedCreateNestedManyWithoutQuartoInput = {
+    create?: XOR<fotosCreateWithoutQuartoInput, fotosUncheckedCreateWithoutQuartoInput> | fotosCreateWithoutQuartoInput[] | fotosUncheckedCreateWithoutQuartoInput[]
+    connectOrCreate?: fotosCreateOrConnectWithoutQuartoInput | fotosCreateOrConnectWithoutQuartoInput[]
+    createMany?: fotosCreateManyQuartoInputEnvelope
+    connect?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
   }
 
   export type FloatFieldUpdateOperationsInput = {
@@ -4798,6 +4682,24 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type fotosUpdateManyWithoutQuartoNestedInput = {
+    create?: XOR<fotosCreateWithoutQuartoInput, fotosUncheckedCreateWithoutQuartoInput> | fotosCreateWithoutQuartoInput[] | fotosUncheckedCreateWithoutQuartoInput[]
+    connectOrCreate?: fotosCreateOrConnectWithoutQuartoInput | fotosCreateOrConnectWithoutQuartoInput[]
+    upsert?: fotosUpsertWithWhereUniqueWithoutQuartoInput | fotosUpsertWithWhereUniqueWithoutQuartoInput[]
+    createMany?: fotosCreateManyQuartoInputEnvelope
+    set?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    disconnect?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    delete?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    connect?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    update?: fotosUpdateWithWhereUniqueWithoutQuartoInput | fotosUpdateWithWhereUniqueWithoutQuartoInput[]
+    updateMany?: fotosUpdateManyWithWhereWithoutQuartoInput | fotosUpdateManyWithWhereWithoutQuartoInput[]
+    deleteMany?: fotosScalarWhereInput | fotosScalarWhereInput[]
+  }
+
   export type TipoQuartoUpdateOneRequiredWithoutQuartosNestedInput = {
     create?: XOR<TipoQuartoCreateWithoutQuartosInput, TipoQuartoUncheckedCreateWithoutQuartosInput>
     connectOrCreate?: TipoQuartoCreateOrConnectWithoutQuartosInput
@@ -4806,32 +4708,18 @@ export namespace Prisma {
     update?: XOR<XOR<TipoQuartoUpdateToOneWithWhereWithoutQuartosInput, TipoQuartoUpdateWithoutQuartosInput>, TipoQuartoUncheckedUpdateWithoutQuartosInput>
   }
 
-  export type FotoUpdateManyWithoutQuartoNestedInput = {
-    create?: XOR<FotoCreateWithoutQuartoInput, FotoUncheckedCreateWithoutQuartoInput> | FotoCreateWithoutQuartoInput[] | FotoUncheckedCreateWithoutQuartoInput[]
-    connectOrCreate?: FotoCreateOrConnectWithoutQuartoInput | FotoCreateOrConnectWithoutQuartoInput[]
-    upsert?: FotoUpsertWithWhereUniqueWithoutQuartoInput | FotoUpsertWithWhereUniqueWithoutQuartoInput[]
-    createMany?: FotoCreateManyQuartoInputEnvelope
-    set?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    disconnect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    delete?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    update?: FotoUpdateWithWhereUniqueWithoutQuartoInput | FotoUpdateWithWhereUniqueWithoutQuartoInput[]
-    updateMany?: FotoUpdateManyWithWhereWithoutQuartoInput | FotoUpdateManyWithWhereWithoutQuartoInput[]
-    deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
-  }
-
-  export type FotoUncheckedUpdateManyWithoutQuartoNestedInput = {
-    create?: XOR<FotoCreateWithoutQuartoInput, FotoUncheckedCreateWithoutQuartoInput> | FotoCreateWithoutQuartoInput[] | FotoUncheckedCreateWithoutQuartoInput[]
-    connectOrCreate?: FotoCreateOrConnectWithoutQuartoInput | FotoCreateOrConnectWithoutQuartoInput[]
-    upsert?: FotoUpsertWithWhereUniqueWithoutQuartoInput | FotoUpsertWithWhereUniqueWithoutQuartoInput[]
-    createMany?: FotoCreateManyQuartoInputEnvelope
-    set?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    disconnect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    delete?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    update?: FotoUpdateWithWhereUniqueWithoutQuartoInput | FotoUpdateWithWhereUniqueWithoutQuartoInput[]
-    updateMany?: FotoUpdateManyWithWhereWithoutQuartoInput | FotoUpdateManyWithWhereWithoutQuartoInput[]
-    deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
+  export type fotosUncheckedUpdateManyWithoutQuartoNestedInput = {
+    create?: XOR<fotosCreateWithoutQuartoInput, fotosUncheckedCreateWithoutQuartoInput> | fotosCreateWithoutQuartoInput[] | fotosUncheckedCreateWithoutQuartoInput[]
+    connectOrCreate?: fotosCreateOrConnectWithoutQuartoInput | fotosCreateOrConnectWithoutQuartoInput[]
+    upsert?: fotosUpsertWithWhereUniqueWithoutQuartoInput | fotosUpsertWithWhereUniqueWithoutQuartoInput[]
+    createMany?: fotosCreateManyQuartoInputEnvelope
+    set?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    disconnect?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    delete?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    connect?: fotosWhereUniqueInput | fotosWhereUniqueInput[]
+    update?: fotosUpdateWithWhereUniqueWithoutQuartoInput | fotosUpdateWithWhereUniqueWithoutQuartoInput[]
+    updateMany?: fotosUpdateManyWithWhereWithoutQuartoInput | fotosUpdateManyWithWhereWithoutQuartoInput[]
+    deleteMany?: fotosScalarWhereInput | fotosScalarWhereInput[]
   }
 
   export type QuartoCreateNestedOneWithoutFotosInput = {
@@ -4840,8 +4728,8 @@ export namespace Prisma {
     connect?: QuartoWhereUniqueInput
   }
 
-  export type BytesFieldUpdateOperationsInput = {
-    set?: Buffer
+  export type NullableBytesFieldUpdateOperationsInput = {
+    set?: Buffer | null
   }
 
   export type QuartoUpdateOneRequiredWithoutFotosNestedInput = {
@@ -4877,15 +4765,15 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -4932,18 +4820,45 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
@@ -4962,40 +4877,53 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type NestedBytesFilter<$PrismaModel = never> = {
-    equals?: Buffer | BytesFieldRefInput<$PrismaModel>
-    in?: Buffer[]
-    notIn?: Buffer[]
-    not?: NestedBytesFilter<$PrismaModel> | Buffer
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedBytesWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Buffer | BytesFieldRefInput<$PrismaModel>
-    in?: Buffer[]
-    notIn?: Buffer[]
-    not?: NestedBytesWithAggregatesFilter<$PrismaModel> | Buffer
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBytesFilter<$PrismaModel>
-    _max?: NestedBytesFilter<$PrismaModel>
+  export type NestedBytesNullableFilter<$PrismaModel = never> = {
+    equals?: Buffer | BytesFieldRefInput<$PrismaModel> | null
+    in?: Buffer[] | null
+    notIn?: Buffer[] | null
+    not?: NestedBytesNullableFilter<$PrismaModel> | Buffer | null
+  }
+
+  export type NestedBytesNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Buffer | BytesFieldRefInput<$PrismaModel> | null
+    in?: Buffer[] | null
+    notIn?: Buffer[] | null
+    not?: NestedBytesNullableWithAggregatesFilter<$PrismaModel> | Buffer | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBytesNullableFilter<$PrismaModel>
+    _max?: NestedBytesNullableFilter<$PrismaModel>
   }
 
   export type QuartoCreateWithoutTipoQuartoInput = {
-    numero: string
     preco: number
+    numero?: string | null
     status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    fotos?: FotoCreateNestedManyWithoutQuartoInput
+    fotos?: fotosCreateNestedManyWithoutQuartoInput
   }
 
   export type QuartoUncheckedCreateWithoutTipoQuartoInput = {
     id?: number
-    numero: string
     preco: number
+    numero?: string | null
     status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    fotos?: FotoUncheckedCreateNestedManyWithoutQuartoInput
+    fotos?: fotosUncheckedCreateNestedManyWithoutQuartoInput
   }
 
   export type QuartoCreateOrConnectWithoutTipoQuartoInput = {
@@ -5029,27 +4957,47 @@ export namespace Prisma {
     OR?: QuartoScalarWhereInput[]
     NOT?: QuartoScalarWhereInput | QuartoScalarWhereInput[]
     id?: IntFilter<"Quarto"> | number
-    numero?: StringFilter<"Quarto"> | string
     preco?: FloatFilter<"Quarto"> | number
+    numero?: StringNullableFilter<"Quarto"> | string | null
     status?: IntFilter<"Quarto"> | number
     tipoQuartoId?: IntFilter<"Quarto"> | number
-    createdAt?: DateTimeFilter<"Quarto"> | Date | string
-    updatedAt?: DateTimeFilter<"Quarto"> | Date | string
+  }
+
+  export type fotosCreateWithoutQuartoInput = {
+    foto_id: number
+    foto_bin?: Buffer | null
+    foto_nome?: string | null
+    foto_extensao?: string | null
+    foto_status?: number | null
+  }
+
+  export type fotosUncheckedCreateWithoutQuartoInput = {
+    foto_id: number
+    foto_bin?: Buffer | null
+    foto_nome?: string | null
+    foto_extensao?: string | null
+    foto_status?: number | null
+  }
+
+  export type fotosCreateOrConnectWithoutQuartoInput = {
+    where: fotosWhereUniqueInput
+    create: XOR<fotosCreateWithoutQuartoInput, fotosUncheckedCreateWithoutQuartoInput>
+  }
+
+  export type fotosCreateManyQuartoInputEnvelope = {
+    data: fotosCreateManyQuartoInput | fotosCreateManyQuartoInput[]
+    skipDuplicates?: boolean
   }
 
   export type TipoQuartoCreateWithoutQuartosInput = {
     descricao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    status?: number | null
   }
 
   export type TipoQuartoUncheckedCreateWithoutQuartosInput = {
     id?: number
     descricao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    status?: number | null
   }
 
   export type TipoQuartoCreateOrConnectWithoutQuartosInput = {
@@ -5057,33 +5005,32 @@ export namespace Prisma {
     create: XOR<TipoQuartoCreateWithoutQuartosInput, TipoQuartoUncheckedCreateWithoutQuartosInput>
   }
 
-  export type FotoCreateWithoutQuartoInput = {
-    nome: string
-    bin: Buffer
-    extensao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+  export type fotosUpsertWithWhereUniqueWithoutQuartoInput = {
+    where: fotosWhereUniqueInput
+    update: XOR<fotosUpdateWithoutQuartoInput, fotosUncheckedUpdateWithoutQuartoInput>
+    create: XOR<fotosCreateWithoutQuartoInput, fotosUncheckedCreateWithoutQuartoInput>
   }
 
-  export type FotoUncheckedCreateWithoutQuartoInput = {
-    id?: number
-    nome: string
-    bin: Buffer
-    extensao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+  export type fotosUpdateWithWhereUniqueWithoutQuartoInput = {
+    where: fotosWhereUniqueInput
+    data: XOR<fotosUpdateWithoutQuartoInput, fotosUncheckedUpdateWithoutQuartoInput>
   }
 
-  export type FotoCreateOrConnectWithoutQuartoInput = {
-    where: FotoWhereUniqueInput
-    create: XOR<FotoCreateWithoutQuartoInput, FotoUncheckedCreateWithoutQuartoInput>
+  export type fotosUpdateManyWithWhereWithoutQuartoInput = {
+    where: fotosScalarWhereInput
+    data: XOR<fotosUpdateManyMutationInput, fotosUncheckedUpdateManyWithoutQuartoInput>
   }
 
-  export type FotoCreateManyQuartoInputEnvelope = {
-    data: FotoCreateManyQuartoInput | FotoCreateManyQuartoInput[]
-    skipDuplicates?: boolean
+  export type fotosScalarWhereInput = {
+    AND?: fotosScalarWhereInput | fotosScalarWhereInput[]
+    OR?: fotosScalarWhereInput[]
+    NOT?: fotosScalarWhereInput | fotosScalarWhereInput[]
+    foto_id?: IntFilter<"fotos"> | number
+    foto_bin?: BytesNullableFilter<"fotos"> | Buffer | null
+    foto_nome?: StringNullableFilter<"fotos"> | string | null
+    foto_extensao?: StringNullableFilter<"fotos"> | string | null
+    foto_status?: IntNullableFilter<"fotos"> | number | null
+    quarto_id?: IntFilter<"fotos"> | number
   }
 
   export type TipoQuartoUpsertWithoutQuartosInput = {
@@ -5099,66 +5046,28 @@ export namespace Prisma {
 
   export type TipoQuartoUpdateWithoutQuartosInput = {
     descricao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type TipoQuartoUncheckedUpdateWithoutQuartosInput = {
     id?: IntFieldUpdateOperationsInput | number
     descricao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type FotoUpsertWithWhereUniqueWithoutQuartoInput = {
-    where: FotoWhereUniqueInput
-    update: XOR<FotoUpdateWithoutQuartoInput, FotoUncheckedUpdateWithoutQuartoInput>
-    create: XOR<FotoCreateWithoutQuartoInput, FotoUncheckedCreateWithoutQuartoInput>
-  }
-
-  export type FotoUpdateWithWhereUniqueWithoutQuartoInput = {
-    where: FotoWhereUniqueInput
-    data: XOR<FotoUpdateWithoutQuartoInput, FotoUncheckedUpdateWithoutQuartoInput>
-  }
-
-  export type FotoUpdateManyWithWhereWithoutQuartoInput = {
-    where: FotoScalarWhereInput
-    data: XOR<FotoUpdateManyMutationInput, FotoUncheckedUpdateManyWithoutQuartoInput>
-  }
-
-  export type FotoScalarWhereInput = {
-    AND?: FotoScalarWhereInput | FotoScalarWhereInput[]
-    OR?: FotoScalarWhereInput[]
-    NOT?: FotoScalarWhereInput | FotoScalarWhereInput[]
-    id?: IntFilter<"Foto"> | number
-    nome?: StringFilter<"Foto"> | string
-    bin?: BytesFilter<"Foto"> | Buffer
-    extensao?: StringFilter<"Foto"> | string
-    status?: IntFilter<"Foto"> | number
-    quartoId?: IntFilter<"Foto"> | number
-    createdAt?: DateTimeFilter<"Foto"> | Date | string
-    updatedAt?: DateTimeFilter<"Foto"> | Date | string
+    status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type QuartoCreateWithoutFotosInput = {
-    numero: string
     preco: number
+    numero?: string | null
     status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
     tipoQuarto: TipoQuartoCreateNestedOneWithoutQuartosInput
   }
 
   export type QuartoUncheckedCreateWithoutFotosInput = {
     id?: number
-    numero: string
     preco: number
+    numero?: string | null
     status: number
     tipoQuartoId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type QuartoCreateOrConnectWithoutFotosInput = {
@@ -5178,98 +5087,79 @@ export namespace Prisma {
   }
 
   export type QuartoUpdateWithoutFotosInput = {
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tipoQuarto?: TipoQuartoUpdateOneRequiredWithoutQuartosNestedInput
   }
 
   export type QuartoUncheckedUpdateWithoutFotosInput = {
     id?: IntFieldUpdateOperationsInput | number
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
     tipoQuartoId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QuartoCreateManyTipoQuartoInput = {
     id?: number
-    numero: string
     preco: number
+    numero?: string | null
     status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type QuartoUpdateWithoutTipoQuartoInput = {
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    fotos?: FotoUpdateManyWithoutQuartoNestedInput
+    fotos?: fotosUpdateManyWithoutQuartoNestedInput
   }
 
   export type QuartoUncheckedUpdateWithoutTipoQuartoInput = {
     id?: IntFieldUpdateOperationsInput | number
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    fotos?: FotoUncheckedUpdateManyWithoutQuartoNestedInput
+    fotos?: fotosUncheckedUpdateManyWithoutQuartoNestedInput
   }
 
   export type QuartoUncheckedUpdateManyWithoutTipoQuartoInput = {
     id?: IntFieldUpdateOperationsInput | number
-    numero?: StringFieldUpdateOperationsInput | string
     preco?: FloatFieldUpdateOperationsInput | number
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
     status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type FotoCreateManyQuartoInput = {
-    id?: number
-    nome: string
-    bin: Buffer
-    extensao: string
-    status: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+  export type fotosCreateManyQuartoInput = {
+    foto_id: number
+    foto_bin?: Buffer | null
+    foto_nome?: string | null
+    foto_extensao?: string | null
+    foto_status?: number | null
   }
 
-  export type FotoUpdateWithoutQuartoInput = {
-    nome?: StringFieldUpdateOperationsInput | string
-    bin?: BytesFieldUpdateOperationsInput | Buffer
-    extensao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type fotosUpdateWithoutQuartoInput = {
+    foto_id?: IntFieldUpdateOperationsInput | number
+    foto_bin?: NullableBytesFieldUpdateOperationsInput | Buffer | null
+    foto_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_extensao?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type FotoUncheckedUpdateWithoutQuartoInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    bin?: BytesFieldUpdateOperationsInput | Buffer
-    extensao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type fotosUncheckedUpdateWithoutQuartoInput = {
+    foto_id?: IntFieldUpdateOperationsInput | number
+    foto_bin?: NullableBytesFieldUpdateOperationsInput | Buffer | null
+    foto_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_extensao?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type FotoUncheckedUpdateManyWithoutQuartoInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    bin?: BytesFieldUpdateOperationsInput | Buffer
-    extensao?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type fotosUncheckedUpdateManyWithoutQuartoInput = {
+    foto_id?: IntFieldUpdateOperationsInput | number
+    foto_bin?: NullableBytesFieldUpdateOperationsInput | Buffer | null
+    foto_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_extensao?: NullableStringFieldUpdateOperationsInput | string | null
+    foto_status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
 
@@ -5294,9 +5184,9 @@ export namespace Prisma {
      */
     export type QuartoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = QuartoDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use FotoDefaultArgs instead
+     * @deprecated Use fotosDefaultArgs instead
      */
-    export type FotoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = FotoDefaultArgs<ExtArgs>
+    export type fotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = fotosDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

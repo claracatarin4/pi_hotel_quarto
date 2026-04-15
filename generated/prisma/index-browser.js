@@ -125,30 +125,24 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.TipoQuartoScalarFieldEnum = {
   id: 'id',
   descricao: 'descricao',
-  status: 'status',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  status: 'status'
 };
 
 exports.Prisma.QuartoScalarFieldEnum = {
   id: 'id',
-  numero: 'numero',
   preco: 'preco',
+  numero: 'numero',
   status: 'status',
-  tipoQuartoId: 'tipoQuartoId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  tipoQuartoId: 'tipoQuartoId'
 };
 
-exports.Prisma.FotoScalarFieldEnum = {
-  id: 'id',
-  nome: 'nome',
-  bin: 'bin',
-  extensao: 'extensao',
-  status: 'status',
-  quartoId: 'quartoId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+exports.Prisma.FotosScalarFieldEnum = {
+  foto_id: 'foto_id',
+  foto_bin: 'foto_bin',
+  foto_nome: 'foto_nome',
+  foto_extensao: 'foto_extensao',
+  foto_status: 'foto_status',
+  quarto_id: 'quarto_id'
 };
 
 exports.Prisma.SortOrder = {
@@ -156,11 +150,16 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   TipoQuarto: 'TipoQuarto',
   Quarto: 'Quarto',
-  Foto: 'Foto'
+  fotos: 'fotos'
 };
 
 /**
