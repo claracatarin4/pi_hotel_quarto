@@ -41,4 +41,5 @@ pipeline {
 
             echo 'Erro na pipeline!'
         }
-    
+    }
+}
